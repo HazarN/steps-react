@@ -18,13 +18,8 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleVisibility = () => setIsOpen(isOpen => !isOpen);
-
-  const handleNext = () => {
-    if (step < 3) setStep(currStep => currStep + 1);
-  };
-  const handlePrev = () => {
-    if (step > 1) setStep(currStep => currStep - 1);
-  };
+  const handleNext = () => step < 3 && setStep(currStep => currStep + 1);
+  const handlePrev = () => step > 1 && setStep(currStep => currStep - 1);
 
   return (
     <>
